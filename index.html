@@ -31,7 +31,6 @@
             color: var(--text-dark);
         }
 
-        /* Header Navigation */
         header {
             background-color: var(--primary-dark);
             color: var(--text-light);
@@ -101,7 +100,6 @@
             color: var(--primary-dark);
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(10, 46, 25, 0.8), rgba(10, 46, 25, 0.8)), url('https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=1920') center/cover;
             height: 60vh;
@@ -157,7 +155,6 @@
             padding: 15px;
         }
 
-        /* Section Titles */
         .section-title {
             text-align: center;
             margin: 50px 0 30px;
@@ -169,7 +166,6 @@
             color: var(--accent-gold);
         }
 
-        /* Products Section */
         .products-container {
             display: flex;
             justify-content: center;
@@ -441,7 +437,6 @@
             margin-top: 10px;
         }
 
-        /* Payment Details */
         .payment-info {
             background: #fff;
             padding: 30px;
@@ -451,7 +446,6 @@
             border: 2px dashed var(--accent-gold);
         }
         
-        /* Process Section */
         .process-section {
             padding: 50px 10%;
             background-color: var(--primary-dark);
@@ -492,7 +486,6 @@
             color: #ddd;
         }
 
-        /* About Section */
         .about-section {
             padding: 50px 10%;
             background-color: #fff;
@@ -500,7 +493,6 @@
             text-align: center;
         }
 
-        /* Footer */
         footer {
             background-color: #051a0e;
             color: #aaa;
@@ -545,7 +537,6 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="logo">
             <div>
@@ -566,7 +557,6 @@
         </button>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <h1>Har Cup Mein <br> <span>Tazgi Aur Swaad</span></h1>
         <p>Pure Tea | Rich Aroma | Natural Taste</p>
@@ -631,7 +621,8 @@
                     ₹100<br><span class="small-text">DISCOUNT</span><br>(46%)
                 </div>
 
-                <img src="elaichi_packet.png" alt="Elaichi Tea Green Packet" class="product-img">
+                <!-- GitHub File Match -->
+                <img src="1000000767.png" alt="Elaichi Tea Green Packet" class="product-img">
                 
                 <h3 class="product-title">Elaichi Tea</h3>
                 <p class="product-desc">Cardamom Flavour | Refreshing Aroma | Royal Taste</p>
@@ -665,7 +656,8 @@
                     ₹100<br><span class="small-text">DISCOUNT</span><br>(45%)
                 </div>
 
-                <img src="delight_packet.png" alt="Delight Tea Black Packet" class="product-img">
+                <!-- GitHub File Match -->
+                <img src="1000009888.png" alt="Delight Tea Black Packet" class="product-img">
                 
                 <h3 class="product-title">Delight Tea</h3>
                 <p class="product-desc">Smooth Taste | Rich Flavour | Everyday Special</p>
@@ -677,226 +669,4 @@
                     </div>
                     <div>
                         <span style="font-size: 0.8rem;">Selling Price</span><br>
-                        <span class="selling-price">₹124/-</span>
-                    </div>
-                </div>
                 
-                <div class="quantity-control">
-                    <span style="font-size: 0.9rem; font-weight: 600;">Quantity:</span>
-                    <button onclick="document.getElementById('qty3').value = Math.max(1, parseInt(document.getElementById('qty3').value)-1)">-</button>
-                    <input type="text" id="qty3" value="1" style="width: 40px; text-align: center; border: 1px solid #ccc; padding: 5px;">
-                    <button onclick="document.getElementById('qty3').value = parseInt(document.getElementById('qty3').value)+1">+</button>
-                </div>
-
-                <button class="order-btn" onclick="addToCart('Sam🧿 Delight Tea (250g)', 124, 'qty3')">
-                    <i class="fas fa-cart-plus"></i> Add to Cart
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Payment Info Section -->
-    <section class="payment-info">
-        <h2 style="color: var(--primary-dark); margin-bottom: 15px;"><i class="fas fa-qrcode"></i> UPI Payment Details</h2>
-        <p>Aap apna order Cart mein add karke seedha WhatsApp par bhej sakte hain.<br>Payment ke liye humara UPI ID use karein.</p>
-        <p style="font-size: 1.5rem; font-weight: bold; color: #d32f2f; margin: 15px 0;">gautampanchari-14@okicici</p>
-        <p style="font-size: 0.9rem; color: #666;">(Order bhejne ke baad apna payment screenshot WhatsApp par share karein)</p>
-    </section>
-
-    <!-- OUR TEA SECTION (Contains Tea Making Process) -->
-    <section id="our-tea" class="process-section">
-        <h2 style="font-size: 2.5rem; color: #fff;">Ek Perfect Cup <span style="color: var(--accent-gold);">Chai Kaise Banayein?</span></h2>
-        <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; color: #ddd;">
-            Humari chai 100% natural pattiyon se bani hai. Iska asali swaad lene ke liye in aasan steps ko follow karein:
-        </p>
-        
-        <div class="process-steps">
-            <div class="step-card">
-                <i class="fas fa-fire"></i>
-                <h3>1. Paani Ubaalein</h3>
-                <p>Ek bartan mein 1 cup paani lein aur use achhi tarah ubalne dein.</p>
-            </div>
-            <div class="step-card">
-                <i class="fas fa-leaf"></i>
-                <h3>2. Chai Patti Daalein</h3>
-                <p>Ubalte hue paani mein 1 chammach Sam🧿 Premium Tea daalein aur 2 minute tak ubaalein.</p>
-            </div>
-            <div class="step-card">
-                <i class="fas fa-tint"></i>
-                <h3>3. Doodh aur Cheeni</h3>
-                <p>Apne swaad ke anusar doodh aur cheeni milayein. Ise 1-2 minute aur pakne dein.</p>
-            </div>
-            <div class="step-card">
-                <i class="fas fa-mug-hot"></i>
-                <h3>4. Chhane aur Piyein</h3>
-                <p>Garma garam chai ko cup mein chhan lein aur uske kadak swaad ka maza lein.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT US SECTION -->
-    <section id="about-us" class="about-section">
-        <h2 style="margin-bottom: 20px; font-size: 2.5rem; color: var(--primary-dark);">About Sam🧿 Premium Tea</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-            Welcome to Sam🧿 Premium Tea by Shree Shyam Products. We are dedicated to bringing you the most authentic, refreshing, and premium quality tea straight to your cup. 
-            Our brand is built on trust, purity, and the promise of a perfect morning start. Whether you prefer the strong kadak chai or the aromatic elaichi flavour, 
-            every packet is packed with care, ensuring 100% natural tea leaves and hygiene.
-        </p>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-col">
-            <h3>Sam🧿 Premium Tea</h3>
-            <p>Har Cup Mein Tazgi Aur Swaad</p>
-        </div>
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#our-tea">Our Tea</a></li>
-                <li><a href="#about-us">About Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h3>Contact Us</h3>
-            <ul>
-                <li><i class="fab fa-whatsapp" style="color: var(--wa-green);"></i> +91 7219929217</li>
-                <li><i class="fas fa-map-marker-alt"></i> Nokha, Bikaner (Raj.)</li>
-                <li><i class="fas fa-money-bill-wave"></i> UPI: gautampanchari-14@okicici</li>
-            </ul>
-        </div>
-    </footer>
-    <div class="bottom-bar">
-        &copy; 2026 Sam🧿 Premium Tea. All Rights Reserved.
-    </div>
-
-    <!-- Floating Cart Button -->
-    <div class="floating-cart" onclick="toggleCart()">
-        <i class="fas fa-shopping-bag"></i>
-        <div class="cart-count" id="floatCartCount">0</div>
-    </div>
-
-    <!-- Cart Modal / Sidebar -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-header">
-            <span><i class="fas fa-shopping-cart"></i> Your Cart</span>
-            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cartItemsContainer">
-            <p style="text-align:center; color:#999; margin-top:20px;">Your cart is empty.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total Amount:</span>
-                <span id="cartTotalPrice">₹0</span>
-            </div>
-            <div class="form-group-cart">
-                <input type="text" id="custName" placeholder="Your Name (Required)">
-            </div>
-            <div class="form-group-cart">
-                <textarea id="custAddress" rows="2" placeholder="Full Delivery Address (Required)"></textarea>
-            </div>
-            <button class="checkout-btn" onclick="checkoutOrder()">
-                <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
-            </button>
-        </div>
-    </div>
-
-    <!-- JavaScript for Cart System -->
-    <script>
-        const waNumber = "917219929217"; 
-        let cart = [];
-
-        function toggleCart() {
-            document.getElementById('cartModal').classList.toggle('open');
-        }
-
-        function addToCart(productName, price, qtyInputId) {
-            let qty = parseInt(document.getElementById(qtyInputId).value);
-            if (qty <= 0) return;
-
-            let existingItem = cart.find(item => item.name === productName);
-            if (existingItem) {
-                existingItem.qty += qty;
-            } else {
-                cart.push({ name: productName, price: price, qty: qty });
-            }
-            
-            updateCartUI();
-            
-            let cartIcon = document.querySelector('.floating-cart');
-            cartIcon.style.transform = "scale(1.3)";
-            setTimeout(() => { cartIcon.style.transform = "scale(1)"; }, 300);
-            
-            document.getElementById(qtyInputId).value = 1;
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            let totalQty = 0;
-            let totalPrice = 0;
-            let container = document.getElementById('cartItemsContainer');
-            
-            if (cart.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#999; margin-top:20px;">Your cart is empty.</p>';
-            } else {
-                container.innerHTML = '';
-                cart.forEach((item, index) => {
-                    let itemTotal = item.price * item.qty;
-                    totalQty += item.qty;
-                    totalPrice += itemTotal;
-                    
-                    container.innerHTML += `
-                        <div class="cart-item">
-                            <div style="flex: 1;">
-                                <h4>${item.name}</h4>
-                                <span style="color:#666; font-size:0.9rem;">₹${item.price} x ${item.qty} = ₹${itemTotal}</span>
-                            </div>
-                            <button onclick="removeFromCart(${index})" style="background:none; border:none; color:#d32f2f; cursor:pointer; padding:5px;"><i class="fas fa-trash"></i></button>
-                        </div>
-                    `;
-                });
-            }
-
-            document.getElementById('floatCartCount').innerText = totalQty;
-            document.getElementById('headerCartCount').innerText = `(${totalQty})`;
-            document.getElementById('cartTotalPrice').innerText = `₹${totalPrice}`;
-        }
-
-        function checkoutOrder() {
-            if (cart.length === 0) {
-                alert("Please add items to your cart first.");
-                return;
-            }
-            
-            let name = document.getElementById("custName").value;
-            let address = document.getElementById("custAddress").value;
-            
-            if (!name || !address) {
-                alert("Please enter your Name and Address to complete the order.");
-                return;
-            }
-
-            let message = `*NEW ORDER - Sam🧿 Premium Tea*%0A%0A*Name:* ${name}%0A*Address:* ${address}%0A%0A*Order Details:*%0A`;
-            
-            let finalTotal = 0;
-            cart.forEach(item => {
-                let itemTotal = item.price * item.qty;
-                finalTotal += itemTotal;
-                message += `- ${item.name} (${item.qty} packets) = ₹${itemTotal}%0A`;
-            });
-
-            message += `%0A*Total Bill Amount:* ₹${finalTotal}%0A%0AI will pay via UPI (gautampanchari-14@okicici).`;
-            
-            let waUrl = `https://wa.me/${waNumber}?text=${message}`;
-            window.open(waUrl, '_blank');
-        }
-    </script>
-</body>
-</html>
