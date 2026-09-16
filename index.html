@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam🧿 Premium Tea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a2e19;
+            --primary-light: #164f2c;
+            --accent-gold: #f4b41a;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-color: #fcf9f2;
+            --wa-green: #25D366;
+            --badge-red: #e31e24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            font-size: 14px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 1px;
+            display: block;
+            margin-top: -5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .header-wa-btn {
+            background-color: transparent;
+            border: 2px solid var(--wa-green);
+            color: var(--text-light);
+            padding: 8px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .header-wa-btn:hover {
+            background-color: var(--wa-green);
+            color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 46, 25, 0.8), rgba(10, 46, 25, 0.8)), url('https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=1920') center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive; 
+            font-size: 4.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--text-light);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .feature-item i {
+            font-size: 24px;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            padding: 15px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+        }
+
+        .section-title span {
+            color: var(--accent-gold);
+        }
+
+        /* Products Section */
+        .products-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 0 5%;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            width: 320px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background-color: var(--badge-red);
+            color: white;
+            padding: 15px 12px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 1.2;
+            z-index: 10;
+            border: 2px dashed #fff; 
+        }
+        
+        .discount-badge .small-text {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain; 
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background-color: #ffffff; 
+            padding: 5px;
+            border: none;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            border-top: 1px dashed #ccc;
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
+            align-items: center;
+        }
+
+        .mrp {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        .selling-price {
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .quantity-control button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Cart System */
+        .floating-cart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--wa-green);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1001;
+            transition: transform 0.3s;
+        }
+
+        .floating-cart:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #d32f2f;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1002;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-header {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        
+        .cart-item h4 {
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .form-group-cart {
+            margin-bottom: 10px;
+        }
+        
+        .form-group-cart input, .form-group-cart textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .checkout-btn {
+            background-color: var(--wa-green);
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Payment Details */
+        .payment-info {
+            background: #fff;
+            padding: 30px;
+            margin: 40px 10%;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px dashed var(--accent-gold);
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 50px 10%;
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            width: 250px;
+            border-top: 4px solid var(--accent-gold);
+            text-align: center;
+        }
+        
+        .step-card i {
+            font-size: 30px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .step-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        
+        .step-card p {
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 50px 10%;
+            background-color: #fff;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #051a0e;
+            color: #aaa;
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-col h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .bottom-bar {
+            text-align: center;
+            padding: 15px;
+            background-color: #030e07;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .cart-modal { width: 100%; right: -100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <div>
+                Sam🧿
+                <span>PREMIUM TEA</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#our-tea">Our Tea</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </nav>
+        <button class="header-wa-btn" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i> View Cart <span id="headerCartCount">(0)</span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Har Cup Mein <br> <span>Tazgi Aur Swaad</span></h1>
+        <p>Pure Tea | Rich Aroma | Natural Taste</p>
+        <div class="features">
+            <div class="feature-item">
+                <i class="fas fa-leaf"></i>
+                <span>100% Natural<br>Tea Leaves</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-heart"></i>
+                <span>Rich in<br>Antioxidants</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-mug-hot"></i>
+                <span>Better Taste<br>& Aroma</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SECTION -->
+    <section id="product">
+        <h2 class="section-title"><i class="fas fa-leaf"></i> Our Premium <span>Products</span> <i class="fas fa-leaf"></i></h2>
+        
+        <div class="products-container">
+            <!-- Product 1: Regular Tea -->
+            <div class="product-card">
+                <div class="discount-badge">
+                    ₹100<br><span class="small-text">DISCOUNT</span><br>(50%)
+                </div>
+                
+                <img src="1001045559.png" alt="Regular Tea Packet" class="product-img">
+                
+                <h3 class="product-title">Regular Tea</h3>
+                <p class="product-desc">Strong Taste | Rich Aroma | Daily Refreshment</p>
+                
+                <div class="price-container">
+                    <div>
+                        <span style="font-size: 0.8rem;">MRP</span><br>
+                        <span class="mrp">₹199/-</span>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.8rem;">Selling Price</span><br>
+                        <span class="selling-price">₹99/-</span>
+                    </div>
+                </div>
+                
+                <div class="quantity-control">
+                    <span style="font-size: 0.9rem; font-weight: 600;">Quantity:</span>
+                    <button onclick="document.getElementById('qty1').value = Math.max(1, parseInt(document.getElementById('qty1').value)-1)">-</button>
+                    <input type="text" id="qty1" value="1" style="width: 40px; text-align: center; border: 1px solid #ccc; padding: 5px;">
+                    <button onclick="document.getElementById('qty1').value = parseInt(document.getElementById('qty1').value)+1">+</button>
+                </div>
+
+                <button class="order-btn" onclick="addToCart('Sam🧿 Regular Tea (250g)', 99, 'qty1')">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 2: Elaichi Tea -->
+            <div class="product-card">
+                <div class="discount-badge">
+                    ₹100<br><span class="small-text">DISCOUNT</span><br>(46%)
+                </div>
+
+                <img src="elaichi_packet.png" alt="Elaichi Tea Green Packet" class="product-img">
+                
+                <h3 class="product-title">Elaichi Tea</h3>
+                <p class="product-desc">Cardamom Flavour | Refreshing Aroma | Royal Taste</p>
+                
+                <div class="price-container">
+                    <div>
+                        <span style="font-size: 0.8rem;">MRP</span><br>
+                        <span class="mrp">₹215/-</span>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.8rem;">Selling Price</span><br>
+                        <span class="selling-price">₹115/-</span>
+                    </div>
+                </div>
+                
+                <div class="quantity-control">
+                    <span style="font-size: 0.9rem; font-weight: 600;">Quantity:</span>
+                    <button onclick="document.getElementById('qty2').value = Math.max(1, parseInt(document.getElementById('qty2').value)-1)">-</button>
+                    <input type="text" id="qty2" value="1" style="width: 40px; text-align: center; border: 1px solid #ccc; padding: 5px;">
+                    <button onclick="document.getElementById('qty2').value = parseInt(document.getElementById('qty2').value)+1">+</button>
+                </div>
+
+                <button class="order-btn" onclick="addToCart('Sam🧿 Elaichi Tea (250g)', 115, 'qty2')">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 3: Delight Tea -->
+            <div class="product-card">
+                <div class="discount-badge">
+                    ₹100<br><span class="small-text">DISCOUNT</span><br>(45%)
+                </div>
+
+                <img src="delight_packet.png" alt="Delight Tea Black Packet" class="product-img">
+                
+                <h3 class="product-title">Delight Tea</h3>
+                <p class="product-desc">Smooth Taste | Rich Flavour | Everyday Special</p>
+                
+                <div class="price-container">
+                    <div>
+                        <span style="font-size: 0.8rem;">MRP</span><br>
+                        <span class="mrp">₹224/-</span>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.8rem;">Selling Price</span><br>
+                        <span class="selling-price">₹124/-</span>
+                    </div>
+                </div>
+                
+                <div class="quantity-control">
+                    <span style="font-size: 0.9rem; font-weight: 600;">Quantity:</span>
+                    <button onclick="document.getElementById('qty3').value = Math.max(1, parseInt(document.getElementById('qty3').value)-1)">-</button>
+                    <input type="text" id="qty3" value="1" style="width: 40px; text-align: center; border: 1px solid #ccc; padding: 5px;">
+                    <button onclick="document.getElementById('qty3').value = parseInt(document.getElementById('qty3').value)+1">+</button>
+                </div>
+
+                <button class="order-btn" onclick="addToCart('Sam🧿 Delight Tea (250g)', 124, 'qty3')">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Info Section -->
+    <section class="payment-info">
+        <h2 style="color: var(--primary-dark); margin-bottom: 15px;"><i class="fas fa-qrcode"></i> UPI Payment Details</h2>
+        <p>Aap apna order Cart mein add karke seedha WhatsApp par bhej sakte hain.<br>Payment ke liye humara UPI ID use karein.</p>
+        <p style="font-size: 1.5rem; font-weight: bold; color: #d32f2f; margin: 15px 0;">gautampanchari-14@okicici</p>
+        <p style="font-size: 0.9rem; color: #666;">(Order bhejne ke baad apna payment screenshot WhatsApp par share karein)</p>
+    </section>
+
+    <!-- OUR TEA SECTION (Contains Tea Making Process) -->
+    <section id="our-tea" class="process-section">
+        <h2 style="font-size: 2.5rem; color: #fff;">Ek Perfect Cup <span style="color: var(--accent-gold);">Chai Kaise Banayein?</span></h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; color: #ddd;">
+            Humari chai 100% natural pattiyon se bani hai. Iska asali swaad lene ke liye in aasan steps ko follow karein:
+        </p>
+        
+        <div class="process-steps">
+            <div class="step-card">
+                <i class="fas fa-fire"></i>
+                <h3>1. Paani Ubaalein</h3>
+                <p>Ek bartan mein 1 cup paani lein aur use achhi tarah ubalne dein.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-leaf"></i>
+                <h3>2. Chai Patti Daalein</h3>
+                <p>Ubalte hue paani mein 1 chammach Sam🧿 Premium Tea daalein aur 2 minute tak ubaalein.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-tint"></i>
+                <h3>3. Doodh aur Cheeni</h3>
+                <p>Apne swaad ke anusar doodh aur cheeni milayein. Ise 1-2 minute aur pakne dein.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-mug-hot"></i>
+                <h3>4. Chhane aur Piyein</h3>
+                <p>Garma garam chai ko cup mein chhan lein aur uske kadak swaad ka maza lein.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about-us" class="about-section">
+        <h2 style="margin-bottom: 20px; font-size: 2.5rem; color: var(--primary-dark);">About Sam🧿 Premium Tea</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+            Welcome to Sam🧿 Premium Tea by Shree Shyam Products. We are dedicated to bringing you the most authentic, refreshing, and premium quality tea straight to your cup. 
+            Our brand is built on trust, purity, and the promise of a perfect morning start. Whether you prefer the strong kadak chai or the aromatic elaichi flavour, 
+            every packet is packed with care, ensuring 100% natural tea leaves and hygiene.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-col">
+            <h3>Sam🧿 Premium Tea</h3>
+            <p>Har Cup Mein Tazgi Aur Swaad</p>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#our-tea">Our Tea</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="fab fa-whatsapp" style="color: var(--wa-green);"></i> +91 7219929217</li>
+                <li><i class="fas fa-map-marker-alt"></i> Nokha, Bikaner (Raj.)</li>
+                <li><i class="fas fa-money-bill-wave"></i> UPI: gautampanchari-14@okicici</li>
+            </ul>
+        </div>
+    </footer>
+    <div class="bottom-bar">
+        &copy; 2026 Sam🧿 Premium Tea. All Rights Reserved.
+    </div>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <div class="cart-count" id="floatCartCount">0</div>
+    </div>
+
+    <!-- Cart Modal / Sidebar -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <span><i class="fas fa-shopping-cart"></i> Your Cart</span>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="text-align:center; color:#999; margin-top:20px;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Amount:</span>
+                <span id="cartTotalPrice">₹0</span>
+            </div>
+            <div class="form-group-cart">
+                <input type="text" id="custName" placeholder="Your Name (Required)">
+            </div>
+            <div class="form-group-cart">
+                <textarea id="custAddress" rows="2" placeholder="Full Delivery Address (Required)"></textarea>
+            </div>
+            <button class="checkout-btn" onclick="checkoutOrder()">
+                <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Cart System -->
+    <script>
+        const waNumber = "917219929217"; 
+        let cart = [];
+
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('open');
+        }
+
+        function addToCart(productName, price, qtyInputId) {
+            let qty = parseInt(document.getElementById(qtyInputId).value);
+            if (qty <= 0) return;
+
+            let existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({ name: productName, price: price, qty: qty });
+            }
+            
+            updateCartUI();
+            
+            let cartIcon = document.querySelector('.floating-cart');
+            cartIcon.style.transform = "scale(1.3)";
+            setTimeout(() => { cartIcon.style.transform = "scale(1)"; }, 300);
+            
+            document.getElementById(qtyInputId).value = 1;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            let totalQty = 0;
+            let totalPrice = 0;
+            let container = document.getElementById('cartItemsContainer');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#999; margin-top:20px;">Your cart is empty.</p>';
+            } else {
+                container.innerHTML = '';
+                cart.forEach((item, index) => {
+                    let itemTotal = item.price * item.qty;
+                    totalQty += item.qty;
+                    totalPrice += itemTotal;
+                    
+                    container.innerHTML += `
+                        <div class="cart-item">
+                            <div style="flex: 1;">
+                                <h4>${item.name}</h4>
+                                <span style="color:#666; font-size:0.9rem;">₹${item.price} x ${item.qty} = ₹${itemTotal}</span>
+                            </div>
+                            <button onclick="removeFromCart(${index})" style="background:none; border:none; color:#d32f2f; cursor:pointer; padding:5px;"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById('floatCartCount').innerText = totalQty;
+            document.getElementById('headerCartCount').innerText = `(${totalQty})`;
+            document.getElementById('cartTotalPrice').innerText = `₹${totalPrice}`;
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                alert("Please add items to your cart first.");
+                return;
+            }
+            
+            let name = document.getElementById("custName").value;
+            let address = document.getElementById("custAddress").value;
+            
+            if (!name || !address) {
+                alert("Please enter your Name and Address to complete the order.");
+                return;
+            }
+
+            let message = `*NEW ORDER - Sam🧿 Premium Tea*%0A%0A*Name:* ${name}%0A*Address:* ${address}%0A%0A*Order Details:*%0A`;
+            
+            let finalTotal = 0;
+            cart.forEach(item => {
+                let itemTotal = item.price * item.qty;
+                finalTotal += itemTotal;
+                message += `- ${item.name} (${item.qty} packets) = ₹${itemTotal}%0A`;
+            });
+
+            message += `%0A*Total Bill Amount:* ₹${finalTotal}%0A%0AI will pay via UPI (gautampanchari-14@okicici).`;
+            
+            let waUrl = `https://wa.me/${waNumber}?text=${message}`;
+            window.open(waUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
