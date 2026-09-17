@@ -15,6 +15,7 @@
             --text-light: #ffffff;
             --bg-color: #fcf9f2;
             --wa-green: #25D366;
+            --ig-pink: #E1306C;
             --badge-red: #e31e24;
         }
 
@@ -437,6 +438,7 @@
             margin-top: 10px;
         }
 
+        /* Payment Details */
         .payment-info {
             background: #fff;
             padding: 30px;
@@ -446,6 +448,7 @@
             border: 2px dashed var(--accent-gold);
         }
         
+        /* Process Section */
         .process-section {
             padding: 50px 10%;
             background-color: var(--primary-dark);
@@ -486,6 +489,7 @@
             color: #ddd;
         }
 
+        /* About Section */
         .about-section {
             padding: 50px 10%;
             background-color: #fff;
@@ -493,6 +497,7 @@
             text-align: center;
         }
 
+        /* Footer */
         footer {
             background-color: #051a0e;
             color: #aaa;
@@ -519,6 +524,11 @@
         .footer-col a {
             color: #aaa;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-gold);
         }
 
         .bottom-bar {
@@ -669,7 +679,7 @@
                         <span style="font-size: 0.8rem;">Selling Price</span><br>
                         <span class="selling-price">₹124/-</span>
                     </div>
-         </div>
+                </div>
                 
                 <div class="quantity-control">
                     <span style="font-size: 0.9rem; font-weight: 600;">Quantity:</span>
@@ -693,7 +703,7 @@
         <p style="font-size: 0.9rem; color: #666;">(Order bhejne ke baad apna payment screenshot WhatsApp par share karein)</p>
     </section>
 
-    <!-- OUR TEA SECTION -->
+    <!-- OUR TEA SECTION (Contains Tea Making Process) -->
     <section id="our-tea" class="process-section">
         <h2 style="font-size: 2.5rem; color: #fff;">Ek Perfect Cup <span style="color: var(--accent-gold);">Chai Kaise Banayein?</span></h2>
         <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; color: #ddd;">
@@ -752,7 +762,8 @@
         <div class="footer-col">
             <h3>Contact Us</h3>
             <ul>
-                <li><i class="fab fa-whatsapp" style="color: var(--wa-green);"></i> +91 7219929217</li>
+                <li><i class="fab fa-whatsapp" style="color: var(--wa-green);"></i> +91 9460361815</li>
+                <li><i class="fab fa-instagram" style="color: #E1306C;"></i> <a href="https://instagram.com/the.sam.tea" target="_blank">the.sam.tea</a></li>
                 <li><i class="fas fa-map-marker-alt"></i> Nokha, Bikaner (Raj.)</li>
                 <li><i class="fas fa-money-bill-wave"></i> UPI: gautampanchari-14@okicici</li>
             </ul>
@@ -796,7 +807,7 @@
 
     <!-- JavaScript for Cart System -->
     <script>
-        const waNumber = "917219929217"; 
+        const waNumber = "919460361815"; 
         let cart = [];
 
         function toggleCart() {
