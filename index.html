@@ -343,7 +343,7 @@
             position: fixed;
             top: 0;
             right: -400px;
-            width: 350px;
+            width: 380px;
             height: 100vh;
             background-color: white;
             box-shadow: -5px 0 15px rgba(0,0,0,0.1);
@@ -376,8 +376,8 @@
         }
 
         .cart-items {
-            padding: 20px;
-            flex: 1;
+            padding: 15px 20px;
+            max-height: 220px;
             overflow-y: auto;
         }
 
@@ -386,49 +386,52 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #eee;
-            padding: 10px 0;
+            padding: 8px 0;
         }
         
         .cart-item h4 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--primary-dark);
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .cart-footer {
-            padding: 20px;
+            padding: 15px 20px 25px 20px;
             background-color: #f9f9f9;
             border-top: 1px solid #ddd;
+            overflow-y: auto;
+            max-height: calc(100vh - 300px);
         }
 
         .cart-total {
             display: flex;
             justify-content: space-between;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: var(--primary-dark);
         }
 
         .form-group-cart {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .form-group-cart input, .form-group-cart textarea {
             width: 100%;
-            padding: 10px;
+            padding: 8px 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 0.9rem;
         }
 
         .checkout-btn {
             background-color: var(--wa-green);
             color: white;
             border: none;
-            padding: 15px;
+            padding: 12px;
             width: 100%;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             display: flex;
@@ -703,7 +706,7 @@
         <p style="font-size: 0.9rem; color: #666;">(Order bhejne ke baad apna payment screenshot WhatsApp par share karein)</p>
     </section>
 
-    <!-- OUR TEA SECTION (Contains Tea Making Process) -->
+    <!-- OUR TEA SECTION -->
     <section id="our-tea" class="process-section">
         <h2 style="font-size: 2.5rem; color: #fff;">Ek Perfect Cup <span style="color: var(--accent-gold);">Chai Kaise Banayein?</span></h2>
         <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; color: #ddd;">
@@ -793,12 +796,29 @@
                 <span>Total Amount:</span>
                 <span id="cartTotalPrice">₹0</span>
             </div>
+            
             <div class="form-group-cart">
-                <input type="text" id="custName" placeholder="Your Name (Required)">
+                <input type="text" id="custName" placeholder="Full Name (Required)">
             </div>
             <div class="form-group-cart">
-                <textarea id="custAddress" rows="2" placeholder="Full Delivery Address (Required)"></textarea>
+                <input type="tel" id="custPhone" placeholder="Phone Number (Required)">
             </div>
+            <div class="form-group-cart">
+                <textarea id="custAddress" rows="2" placeholder="Full Address / House No. / Street (Required)"></textarea>
+            </div>
+            <div class="form-group-cart">
+                <input type="text" id="custLandmark" placeholder="Nearby Landmark">
+            </div>
+            <div class="form-group-cart">
+                <input type="text" id="custPincode" placeholder="Pincode (Required)">
+            </div>
+            <div class="form-group-cart">
+                <input type="text" id="custDistrict" placeholder="District / City (Required)">
+            </div>
+            <div class="form-group-cart">
+                <input type="text" id="custState" placeholder="State (Required)">
+            </div>
+
             <button class="checkout-btn" onclick="checkoutOrder()">
                 <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
             </button>
@@ -857,7 +877,7 @@
                         <div class="cart-item">
                             <div style="flex: 1;">
                                 <h4>${item.name}</h4>
-                                <span style="color:#666; font-size:0.9rem;">₹${item.price} x ${item.qty} = ₹${itemTotal}</span>
+                                <span style="color:#666; font-size:0.85rem;">₹${item.price} x ${item.qty} = ₹${itemTotal}</span>
                             </div>
                             <button onclick="removeFromCart(${index})" style="background:none; border:none; color:#d32f2f; cursor:pointer; padding:5px;"><i class="fas fa-trash"></i></button>
                         </div>
@@ -877,14 +897,19 @@
             }
             
             let name = document.getElementById("custName").value;
+            let phone = document.getElementById("custPhone").value;
             let address = document.getElementById("custAddress").value;
+            let landmark = document.getElementById("custLandmark").value;
+            let pincode = document.getElementById("custPincode").value;
+            let district = document.getElementById("custDistrict").value;
+            let state = document.getElementById("custState").value;
             
-            if (!name || !address) {
-                alert("Please enter your Name and Address to complete the order.");
+            if (!name || !phone || !address || !pincode || !district || !state) {
+                alert("Please fill in all required address and contact fields.");
                 return;
             }
 
-            let message = `*NEW ORDER - Sam🧿 Premium Tea*%0A%0A*Name:* ${name}%0A*Address:* ${address}%0A%0A*Order Details:*%0A`;
+            let message = `*NEW ORDER - Sam🧿 Premium Tea*%0A%0A*Customer Details:*%0A- *Name:* ${name}%0A- *Phone:* ${phone}%0A- *Address:* ${address}%0A- *Landmark:* ${landmark || 'N/A'}%0A- *Pincode:* ${pincode}%0A- *District/City:* ${district}%0A- *State:* ${state}%0A%0A*Order Details:*%0A`;
             
             let finalTotal = 0;
             cart.forEach(item => {
